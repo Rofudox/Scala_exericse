@@ -2,7 +2,7 @@ import scala.io.StdIn.readInt
 object First {
     def main(args: Array[String]) = {
 
-        sum()
+        sum2()
     }
     
     def calc() = {
@@ -70,6 +70,17 @@ object First {
 
     def sum2() = {
         var n = readInt()
-        
+        var d2Array: Array[Array[Int]] = Array.ofDim[Int](2,5)
+        d2Array(0) = Array(1,2,3,4,5)
+        d2Array(1) = Array(2,3,4,5,6)
+        for(i <- 0 until 2) {
+            for (j <- 0 until d2Array(i).length) {
+                
+                d2Array(i)(j) = (i+n)*(j+n)
+                print(d2Array(i)(j) + " ")
+            }
+            println()
+            
+        }
     }
 }
