@@ -1,4 +1,5 @@
 
+import scala.util.Random
 sealed trait Suit
 case object Hearts extends Suit
 case object Diamonds extends Suit
@@ -32,5 +33,12 @@ def createDeck(): List[Card] = {
       rank <- ranks
       suit <- suits
     } yield Card(rank, suit)
+  }
+
+  def newCard(deck: List[Card]): (Card, List[Card]) = {
+    val randomCard = Random.nextInt(deck.length)
+    val card = deck(randomCard)
+    val curr_deck = deck.patch(randomCard, Nil, 1)
+    (card, curr_deck)
   }
 }

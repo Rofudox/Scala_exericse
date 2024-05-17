@@ -4,11 +4,14 @@ import Cards._
 
 object Fifth {
   def main(args: Array[String]): Unit = {
-    val deck = Cards.createDeck()
+    var deck = Cards.createDeck()
+    var (newcard, current_deck) = Cards.newCard(deck)
+    deck = current_deck
+    println(s"Random card: ${newcard.rank} of ${newcard.suit}")
     println(deck.length)
-
-    //deck.foreach(printCards)
-
+    while(!deck.isEmpty) {
+      newCard(deck)}
+      println(s"Random card: ${newcard.rank} of ${newcard.suit}")
   }
 
   def printCards(card: Card) : Unit = {
